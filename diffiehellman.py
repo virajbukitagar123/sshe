@@ -27,28 +27,3 @@ def slowOrder(point):
          i += 1
 
 
-"""if __name__ == "__main__":
-   F = FiniteField(3851, 1)
-
-   # Totally insecure curve: y^2 = x^3 + 324x + 1287
-   curve = EllipticCurve(a=F(324), b=F(1287))
-
-   # order is 1964
-   basePoint = Point(curve, F(920), F(303))
-
-   aliceSecretKey = generateSecretKey(8)
-   bobSecretKey = generateSecretKey(8)
-
-   print('Secret keys are %d, %d' % (aliceSecretKey, bobSecretKey))
-
-   alicePublicKey = sendDH(aliceSecretKey, basePoint, lambda x:x)
-   bobPublicKey = sendDH(bobSecretKey, basePoint, lambda x:x)
-   print("Alice public key %s" % alicePublicKey)
-   print(type(alicePublicKey))
-
-   sharedSecret1 = receiveDH(bobSecretKey, lambda: alicePublicKey)
-   sharedSecret2 = receiveDH(aliceSecretKey, lambda: bobPublicKey)
-   print('Shared secret is %s == %s' % (sharedSecret1, sharedSecret2))
-
-   print('extracing x-coordinate to get an integer shared secret: %d' % (sharedSecret1.x.n))"""
-
