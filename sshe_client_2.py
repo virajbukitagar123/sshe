@@ -4,13 +4,41 @@ import readchar
 import multiprocessing
 from diffiehellman import *
 import pickle
+import getpass
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-port = 2222
+port = 2223
 host_ip = '127.0.0.1'
 
+hash_table = {}
+
 s.connect((host_ip,port))
+
+def send_password(password):
+	password += chr(10)
+	print(password)
+	for c in password:
+		c = ord(c)*sharedSecret
+		x = (str(c.x.n)+";"+str(c.y.n)+"|").encode()
+		s.send(x)
+	
+def receive_ack():
+	msg = s.recv(1024).decode()
+	points = msg.split(";")
+	x,y = points[0],points[1]
+	x = int(x)
+	y = int(y)
+	count = 1
+	temp = Point(curve,F(x),F(y))	
+	while(not temp == sharedSecret):
+		temp = temp - sharedSecret
+		count += 1
+	d = chr(count)
+	if(d == "y"):
+		return 1
+	else:
+		return 0
 
 def sendFunction(sharedKey):
     msg = (str(sharedKey.x.n)+";"+str(sharedKey.y.n)).encode()
@@ -52,15 +80,19 @@ def get_output(s):
             x,y = points[0],points[1]
             x = int(x)
             y = int(y)
-            count = 1
-            try :
-                temp = Point(curve,F(x),F(y))
-            except :
-                continue
-            while(not temp == sharedSecret):
-                temp = temp - sharedSecret
-                count += 1
-            d = chr(count)
+            if((x,y) in hash_table.keys()):
+                 d = hash_table[(x,y)]
+            else:
+                 count = 1
+                 try :
+                      temp = Point(curve,F(x),F(y))
+                 except :
+                      continue
+                 while(not temp == sharedSecret):
+                     temp = temp - sharedSecret
+                     count += 1
+                 d = chr(count)
+                 hash_table[(x,y)] = d 
             print(d,end = "",flush=True)
 
 F = FiniteField(3851, 1)
@@ -80,6 +112,20 @@ sharedSecret = receiveDH(aliceSecretKey,recvFunction)#Client
 print('Shared secret is %s' % (sharedSecret))
 
 print('extracing x-coordinate to get an integer shared secret: %d' % (sharedSecret.x.n))
+
+ack = 0
+count = 0
+while(ack != 1 and count < 3):		
+	password = getpass.getpass("Password : ")
+	send_password(password)
+	ack = receive_ack()
+	count += 1
+	if(ack == 0):
+		print("Wrong Password Try again.....")
+
+if(count == 3 and ack == 0):
+	s.close()
+	exit()
 
 t1 = multiprocessing.Process(target = input_send,args = (s,))
 t2 = multiprocessing.Process(target = get_output,args = (s,))

@@ -1,31 +1,92 @@
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# l
-bash: l: command not found
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
-]0;root@kali: ~/sshe[01;31mroot@kali[00m:[01;34m~/sshe[00m# 
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# 
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# 
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# ls 0l[K[K-l
+total 80
+-rw-r--r-- 1 chaitra chaitra  334 Apr  8 03:13 auth.py
+-rw-r--r-- 1 chaitra chaitra  528 Apr  8 03:13 diffiehellman.py
+-rw-r--r-- 1 chaitra chaitra 3286 Apr  8 03:13 elliptic.py
+drwxr-xr-x 3 chaitra chaitra 4096 Apr  8 03:13 [0m[01;34mfinitefield[0m
+-rw-r--r-- 1 chaitra chaitra    9 Apr  8 03:13 input
+-rw-r--r-- 1 chaitra chaitra   50 Apr  8 03:13 logfile.txt
+-rw-r--r-- 1 chaitra chaitra  889 Apr  8 03:13 pty_1.py
+-rw-r--r-- 1 chaitra chaitra  939 Apr  8 03:13 pty_2.py
+drwxr-xr-x 2 chaitra chaitra 4096 Apr  8 03:18 [01;34m__pycache__[0m
+-rw-r--r-- 1 chaitra chaitra  193 Apr  8 03:13 README.md
+-rw-r--r-- 1 chaitra chaitra  687 Apr  8 03:13 sshe_client_1.py
+-rw-r--r-- 1 chaitra chaitra 3181 Apr  8 04:56 sshe_client_2.py
+-rw-r--r-- 1 chaitra chaitra 1181 Apr  8 03:13 sshe_client.py
+-rw-r--r-- 1 chaitra chaitra 1392 Apr  8 03:13 sshe_server_1.py
+-rw-r--r-- 1 chaitra chaitra 4485 Apr  8 04:48 sshe_server_2.py
+-rw-r--r-- 1 chaitra chaitra 1456 Apr  8 03:13 sshe_server.py
+-rw-r--r-- 1 chaitra chaitra  209 Apr  8 03:13 tail.py
+-rw-r--r-- 1 chaitra chaitra   64 Apr  8 03:13 test.py
+-rw-r--r-- 1 chaitra chaitra  351 Apr  8 04:59 typescript
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# 
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# ls -l
+total 80
+-rw-r--r-- 1 chaitra chaitra  334 Apr  8 03:13 auth.py
+-rw-r--r-- 1 chaitra chaitra  528 Apr  8 03:13 diffiehellman.py
+-rw-r--r-- 1 chaitra chaitra 3286 Apr  8 03:13 elliptic.py
+drwxr-xr-x 3 chaitra chaitra 4096 Apr  8 03:13 [0m[01;34mfinitefield[0m
+-rw-r--r-- 1 chaitra chaitra    9 Apr  8 03:13 input
+-rw-r--r-- 1 chaitra chaitra   50 Apr  8 03:13 logfile.txt
+-rw-r--r-- 1 chaitra chaitra  889 Apr  8 03:13 pty_1.py
+-rw-r--r-- 1 chaitra chaitra  939 Apr  8 03:13 pty_2.py
+drwxr-xr-x 2 chaitra chaitra 4096 Apr  8 03:18 [01;34m__pycache__[0m
+-rw-r--r-- 1 chaitra chaitra  193 Apr  8 03:13 README.md
+-rw-r--r-- 1 chaitra chaitra  687 Apr  8 03:13 sshe_client_1.py
+-rw-r--r-- 1 chaitra chaitra 3181 Apr  8 04:56 sshe_client_2.py
+-rw-r--r-- 1 chaitra chaitra 1181 Apr  8 03:13 sshe_client.py
+-rw-r--r-- 1 chaitra chaitra 1392 Apr  8 03:13 sshe_server_1.py
+-rw-r--r-- 1 chaitra chaitra 4485 Apr  8 04:48 sshe_server_2.py
+-rw-r--r-- 1 chaitra chaitra 1456 Apr  8 03:13 sshe_server.py
+-rw-r--r-- 1 chaitra chaitra  209 Apr  8 03:13 tail.py
+-rw-r--r-- 1 chaitra chaitra   64 Apr  8 03:13 test.py
+-rw-r--r-- 1 chaitra chaitra 1762 Apr  8 05:01 typescript
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# 
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# ls -l
+total 80
+-rw-r--r-- 1 chaitra chaitra  334 Apr  8 03:13 auth.py
+-rw-r--r-- 1 chaitra chaitra  528 Apr  8 03:13 diffiehellman.py
+-rw-r--r-- 1 chaitra chaitra 3286 Apr  8 03:13 elliptic.py
+drwxr-xr-x 3 chaitra chaitra 4096 Apr  8 03:13 [0m[01;34mfinitefield[0m
+-rw-r--r-- 1 chaitra chaitra    9 Apr  8 03:13 input
+-rw-r--r-- 1 chaitra chaitra   50 Apr  8 03:13 logfile.txt
+-rw-r--r-- 1 chaitra chaitra  889 Apr  8 03:13 pty_1.py
+-rw-r--r-- 1 chaitra chaitra  939 Apr  8 03:13 pty_2.py
+drwxr-xr-x 2 chaitra chaitra 4096 Apr  8 03:18 [01;34m__pycache__[0m
+-rw-r--r-- 1 chaitra chaitra  193 Apr  8 03:13 README.md
+-rw-r--r-- 1 chaitra chaitra  687 Apr  8 03:13 sshe_client_1.py
+-rw-r--r-- 1 chaitra chaitra 3181 Apr  8 04:56 sshe_client_2.py
+-rw-r--r-- 1 chaitra chaitra 1181 Apr  8 03:13 sshe_client.py
+-rw-r--r-- 1 chaitra chaitra 1392 Apr  8 03:13 sshe_server_1.py
+-rw-r--r-- 1 chaitra chaitra 4485 Apr  8 04:48 sshe_server_2.py
+-rw-r--r-- 1 chaitra chaitra 1456 Apr  8 03:13 sshe_server.py
+-rw-r--r-- 1 chaitra chaitra  209 Apr  8 03:13 tail.py
+-rw-r--r-- 1 chaitra chaitra   64 Apr  8 03:13 test.py
+-rw-r--r-- 1 chaitra chaitra 3173 Apr  8 05:01 typescript
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# 
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# ls -l[1Pexitls -l
+total 84
+-rw-r--r-- 1 chaitra chaitra  334 Apr  8 03:13 auth.py
+-rw-r--r-- 1 chaitra chaitra  528 Apr  8 03:13 diffiehellman.py
+-rw-r--r-- 1 chaitra chaitra 3286 Apr  8 03:13 elliptic.py
+drwxr-xr-x 3 chaitra chaitra 4096 Apr  8 03:13 [0m[01;34mfinitefield[0m
+-rw-r--r-- 1 chaitra chaitra    9 Apr  8 03:13 input
+-rw-r--r-- 1 chaitra chaitra   50 Apr  8 03:13 logfile.txt
+-rw-r--r-- 1 chaitra chaitra  889 Apr  8 03:13 pty_1.py
+-rw-r--r-- 1 chaitra chaitra  939 Apr  8 03:13 pty_2.py
+drwxr-xr-x 2 chaitra chaitra 4096 Apr  8 03:18 [01;34m__pycache__[0m
+-rw-r--r-- 1 chaitra chaitra  193 Apr  8 03:13 README.md
+-rw-r--r-- 1 chaitra chaitra  687 Apr  8 03:13 sshe_client_1.py
+-rw-r--r-- 1 chaitra chaitra 3181 Apr  8 04:56 sshe_client_2.py
+-rw-r--r-- 1 chaitra chaitra 1181 Apr  8 03:13 sshe_client.py
+-rw-r--r-- 1 chaitra chaitra 1392 Apr  8 03:13 sshe_server_1.py
+-rw-r--r-- 1 chaitra chaitra 4485 Apr  8 04:48 sshe_server_2.py
+-rw-r--r-- 1 chaitra chaitra 1456 Apr  8 03:13 sshe_server.py
+-rw-r--r-- 1 chaitra chaitra  209 Apr  8 03:13 tail.py
+-rw-r--r-- 1 chaitra chaitra   64 Apr  8 03:13 test.py
+-rw-r--r-- 1 chaitra chaitra 4606 Apr  8 05:01 typescript
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# 
+]0;root@chaitra-VirtualBox: ~/Desktop/sshe[01;32mroot@chaitra-VirtualBox[00m:[01;34m~/Desktop/sshe[00m# exit
+exit

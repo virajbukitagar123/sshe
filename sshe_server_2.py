@@ -6,13 +6,79 @@ import multiprocessing
 import time
 from diffiehellman import *
 import pickle
+import crypt
 
+def receive_password():
+	password = ""
+	y = 0
+	while(y != 10):
+		t = ""
+		message = ""
+		while(t != "|"):
+			t = client.recv(1).decode()
+			message += t
+		message = message[:len(message)-1]
+		points = message.split(";") 
+		x,y = points[0],points[1]
+		x = int(x)
+		y = int(y)
+		count = 1
+		print("X",x,"Y",y)
+		temp = Point(curve,F(x),F(y))
+		while(not temp == sharedSecret):
+		   temp = temp - sharedSecret
+		   count += 1
+		y = count
+		password += chr(count)
+	return password[:len(password)-1]
+
+def authorize(password):
+	f = open('/etc/shadow','r')
+
+	a = f.readlines()
+
+	print(password)
+	username = "chaitra"	
+
+	for i in a:
+		if username in i:
+			line = i
+			break
+
+	#print(line)
+
+	e = line.split(":")[1]
+
+	print(e)
+
+	k = e.rfind('$')
+
+	#print(k)
+
+	salt = e[:k]
+
+	#print(salt)
+	encoded  = crypt.crypt(password,salt)
+
+	if(e == encoded):
+		print("Password is correct")
+	return e == encoded
+
+def send_ack(ack):
+	if(ack == 0):
+		c = ord("n")*sharedSecret
+		x = (str(c.x.n)+";"+str(c.y.n)).encode()
+		client.send(x)
+	else:
+		c = ord("y")*sharedSecret
+		x = (str(c.x.n)+";"+str(c.y.n)).encode()
+		client.send(x)
 
 home = str(Path.home())
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = socket.gethostname()
-port = 2222
+port = 2223
 
 
 s.bind(('',port))
@@ -115,7 +181,18 @@ print('Shared secret %s' % (sharedSecret))
 
 print('extracing x-coordinate to get an integer shared secret: %d' % (sharedSecret.x.n))  
 
-     
+ack = 0
+count = 0
+
+while(ack != 1 and count < 3):
+	password = receive_password()
+	ack = authorize(password)
+	send_ack(ack)
+	count+=1
+
+if(count == 3 and ack != 1):
+	client.close()
+	exit()
 
 t1 = multiprocessing.Process(target = input_send,args = (client,p1))
 t2 = multiprocessing.Process(target = output_send,args = (client,f))
