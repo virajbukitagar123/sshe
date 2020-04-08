@@ -3,6 +3,6 @@ SSH server and client program written in python which uses Elliptic curve Crypto
 
 ### Steps to Run
 
-Run sshe_server_1.py in one terminal 
+Run sshe_server_2.py in one system
 
-And sshe_client_1.py in another terminal
+And sshe_client_2.py <ip_of_server>  in another system
