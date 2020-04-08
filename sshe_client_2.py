@@ -17,7 +17,7 @@ s.connect((host_ip,port))
 
 def send_password(password):
 	password += chr(10)
-	print(password)
+	#print(password)
 	for c in password:
 		c = ord(c)*sharedSecret
 		x = (str(c.x.n)+";"+str(c.y.n)+"|").encode()
