@@ -32,37 +32,58 @@ def receive_password():
 		password += chr(count)
 	return password[:len(password)-1]
 
-def authorize(password):
-	f = open('/etc/shadow','r')
+def receive_username():
+	username = ""
+	y = 0
+	while(y != 10):
+		t = ""
+		message = ""
+		while(t != "|"):
+			t = client.recv(1).decode()
+			message += t
+		message = message[:len(message)-1]
+		points = message.split(";") 
+		x,y = points[0],points[1]
+		x = int(x)
+		y = int(y)
+		count = 1
+		print("X",x,"Y",y)
+		temp = Point(curve,F(x),F(y))
+		while(not temp == sharedSecret):
+		   temp = temp - sharedSecret
+		   count += 1
+		y = count
+		username += chr(count)
+	return username[:len(username)-1]
+	
 
-	a = f.readlines()
+def authorize(username,password):
+	try:
+		f = open('/etc/shadow','r')
 
-	print(password)
-	username = "chaitra"	
+		a = f.readlines()
 
-	for i in a:
-		if username in i:
-			line = i
-			break
+		print(password)
+		#username = "root"	
 
-	#print(line)
+		for i in a:
+			if username in i:
+				line = i
+				break
+		#print(line)
+		e = line.split(":")[1]
+		print(e)
+		k = e.rfind('$')
+		#print(k)
+		salt = e[:k]
+		#print(salt)
+		encoded  = crypt.crypt(password,salt)
 
-	e = line.split(":")[1]
-
-	print(e)
-
-	k = e.rfind('$')
-
-	#print(k)
-
-	salt = e[:k]
-
-	#print(salt)
-	encoded  = crypt.crypt(password,salt)
-
-	if(e == encoded):
-		print("Password is correct")
-	return e == encoded
+		if(e == encoded):
+			print("Password is correct")
+		return e == encoded
+	except Exception as e:
+		return False
 
 def send_ack(ack):
 	if(ack == 0):
@@ -78,7 +99,7 @@ home = str(Path.home())
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = socket.gethostname()
-port = 2223
+port = 2222
 
 
 s.bind(('',port))
@@ -185,8 +206,9 @@ ack = 0
 count = 0
 
 while(ack != 1 and count < 3):
+	username = receive_username()
 	password = receive_password()
-	ack = authorize(password)
+	ack = authorize(username,password)
 	send_ack(ack)
 	count+=1
 

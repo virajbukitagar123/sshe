@@ -8,8 +8,8 @@ import getpass
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-port = 2223
-host_ip = '127.0.0.1'
+port = 2222
+host_ip = sys.argv[1]
 
 hash_table = {}
 
@@ -19,6 +19,13 @@ def send_password(password):
 	password += chr(10)
 	print(password)
 	for c in password:
+		c = ord(c)*sharedSecret
+		x = (str(c.x.n)+";"+str(c.y.n)+"|").encode()
+		s.send(x)
+
+def send_username(username):
+	username += chr(10)
+	for c in username:
 		c = ord(c)*sharedSecret
 		x = (str(c.x.n)+";"+str(c.y.n)+"|").encode()
 		s.send(x)
@@ -115,7 +122,9 @@ print('extracing x-coordinate to get an integer shared secret: %d' % (sharedSecr
 
 ack = 0
 count = 0
-while(ack != 1 and count < 3):		
+while(ack != 1 and count < 3):
+	username = input("Username :")
+	send_username(username)		
 	password = getpass.getpass("Password : ")
 	send_password(password)
 	ack = receive_ack()
